@@ -1,6 +1,6 @@
 import {getSnapshotElmByContent} from '../common/util';
 import {AD_LABELS, INTERVAL_TIME_RE_EVALUATE_ADS} from './constants';
-import {set} from '../common/store';
+import {get, set} from '../common/store';
 
 /**
  * evaluate ad classname and save to local database
@@ -18,6 +18,7 @@ export const evaluateAdClassname = () => {
 };
 
 const evaluateAdInterval = (time = INTERVAL_TIME_RE_EVALUATE_ADS) => {
+  evaluateAdClassname();
   setInterval(evaluateAdClassname, time);
 };
 
