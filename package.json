@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "NODE_ENV=development npx webpack --watch",
-    "start": "NODE_ENV=development LOCAL_DEV=1 npx webpack-dev-server",
+    "start": "NODE_ENV=development LOCAL_DEV=1 webpack serve",
     "lint": "eslint src"
   },
   "repository": {

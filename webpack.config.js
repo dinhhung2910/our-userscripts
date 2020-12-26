@@ -22,19 +22,19 @@ module.exports = {
   entry: script,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: `${outName}.user.js`
+    filename: `${outName}.user.js`,
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist')
+    contentBase: path.join(__dirname, 'dist'),
   },
   resolve: {
     alias: {
-      common: path.resolve(__dirname, './src/common'),
-      log: path.resolve(__dirname, './src/common/log'),
-      react: 'preact/compat',
+      'common': path.resolve(__dirname, './src/common'),
+      'log': path.resolve(__dirname, './src/common/log'),
+      'react': 'preact/compat',
       'react-dom/test-utils': 'preact/test-utils',
-      'react-dom': 'preact/compat'
-    }
+      'react-dom': 'preact/compat',
+    },
   },
   module: {
     rules: [
@@ -42,15 +42,15 @@ module.exports = {
         test: /\.less$/,
         use: [
           {
-            loader: 'style-loader' // creates style nodes from JS strings
+            loader: 'style-loader', // creates style nodes from JS strings
           },
           {
-            loader: 'css-loader' // translates CSS into CommonJS
+            loader: 'css-loader', // translates CSS into CommonJS
           },
           {
-            loader: 'less-loader' // compiles Less to CSS
-          }
-        ]
+            loader: 'less-loader', // compiles Less to CSS
+          },
+        ],
       },
       {
         test: /\.js$/,
@@ -59,30 +59,31 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: 'last 2 Chrome versions' }],
+              ['@babel/preset-env', {targets: 'last 2 Chrome versions'}],
               [
                 '@babel/preset-react',
                 {
-                  'pragma': 'h'
-                }
-              ]
-            ]
-          }
-        }
-      }
-    ]
+                  'pragma': 'h',
+                },
+              ],
+            ],
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.CANDY': process.env.CANDY ? JSON.stringify(Buffer.from(process.env.CANDY).toString('base64')) : '',
+      'process.env.CANDY': process.env.CANDY ?
+        JSON.stringify(Buffer.from(process.env.CANDY).toString('base64')) : '',
     }),
     new WebpackUserscript({
       headers,
       proxyScript: {
         baseUrl: 'http://127.0.0.1:8080',
         filename: '[basename].proxy.user.js',
-        enable: () => process.env.LOCAL_DEV === '1'
-      }
-    })
-  ]
+        enable: () => process.env.LOCAL_DEV === '1',
+      },
+    }),
+  ],
 };

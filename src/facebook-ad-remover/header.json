@@ -1,0 +1,12 @@
+{
+  "name": "Facebook advertisements remover",
+  "namespace": "Script",
+  "version": "1.2.0",
+  "updateURL": "https://raw.githubusercontent.com/...",
+  "description": "Remove advertisements on facebook web",
+  "author": "Hung Dinh",
+  "match": "https://www.facebook.com/**",
+  "supportURL": "https://github.com/dinhhung2910/our-userscripts/pulls",
+  "source": "https://github.com/dinhhung2910...",
+  "grant": ["GM_getValue","GM_setValue", "GM_deleteValue",  "GM_listValues", "GM_notification" ,"GM_xmlhttpRequest", "GM_addValueChangeListener", "GM_removeValueChangeListener", "GM_log"]
+}
