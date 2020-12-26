@@ -7,8 +7,8 @@
 // @supportURL  https://github.com/dinhhung2910/our-userscripts/pulls
 // @match       https://www.facebook.com/**
 // @namespace   Script
-// @updateURL   https://raw.githubusercontent.com/...
-// @source      https://github.com/dinhhung2910...
+// @updateURL   https://github.com/dinhhung2910/our-userscripts/raw/main/dist/facebook-ad-remover.user.js
+// @source      https://github.com/dinhhung2910/our-userscripts/blob/main/dist/facebook-ad-remover.user.js
 // @grant       GM_getValue
 // @grant       GM_setValue
 // @grant       GM_deleteValue
