@@ -19,7 +19,15 @@ export const evaluateAdClassname = () => {
 
 const evaluateAdInterval = (time = INTERVAL_TIME_RE_EVALUATE_ADS) => {
   evaluateAdClassname();
-  setInterval(evaluateAdClassname, time);
+  if (get('adSelector')) {
+    return setTimeout(() => {
+      evaluateAdInterval();
+    }, time);
+  } else {
+    return setTimeout(() => {
+      evaluateAdInterval();
+    }, 500);
+  }
 };
 
 export default evaluateAdInterval;
