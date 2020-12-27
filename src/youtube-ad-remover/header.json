@@ -1,0 +1,12 @@
+{
+  "name": "Youtube advertisements remover",
+  "namespace": "Script",
+  "version": "1.2.0",
+  "updateURL": "https://github.com/dinhhung2910/our-userscripts/raw/main/dist/youtube-ad-remover.user.js",
+  "description": "Remove and auto skip advertisements on youtube web",
+  "author": "Hung Dinh",
+  "match": "*://www.youtube.com/*",
+  "supportURL": "https://github.com/dinhhung2910/our-userscripts/pulls",
+  "source": "https://github.com/dinhhung2910/our-userscripts/blob/main/dist/youtube-ad-remover.user.js",
+  "grant": ["GM_getValue","GM_setValue", "GM_deleteValue",  "GM_listValues", "GM_notification" ,"GM_xmlhttpRequest", "GM_addValueChangeListener", "GM_removeValueChangeListener", "GM_log"]
+}
