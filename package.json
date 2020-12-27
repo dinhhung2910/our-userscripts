@@ -34,7 +34,7 @@
     "babel": "^6.23.0",
     "babel-loader": "^8.0.6",
     "cash-dom": "^6.0.2",
-    "css-loader": "^3.4.2",
+    "css-loader": "^5.0.1",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "preact": "^10.3.4",
