@@ -8,4 +8,7 @@ export const SKIP_AD_LABELS = [
   '.ytp-ad-skip-button',
 ];
 
+export const DISPLAY_ITEM = 'ytd-rich-item-renderer';
+export const DISPLAY_ITEM_AD = '.badge-style-type-ad';
+
 export const INTERVAL_TIME = 400;
