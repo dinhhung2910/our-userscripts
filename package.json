@@ -22,7 +22,7 @@
   "devDependencies": {
     "eslint": "^7.17.0",
     "eslint-config-google": "^0.14.0",
-    "webpack": "^5.11.1",
+    "webpack": "^5.12.3",
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^3.11.1",
     "webpack-userscript": "^2.5.6"
