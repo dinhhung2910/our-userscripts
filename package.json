@@ -37,7 +37,7 @@
     "css-loader": "^5.2.6",
     "less": "^4.1.1",
     "less-loader": "^9.0.0",
-    "preact": "^10.5.12",
+    "preact": "^10.5.13",
     "style-loader": "^2.0.0"
   }
 }
