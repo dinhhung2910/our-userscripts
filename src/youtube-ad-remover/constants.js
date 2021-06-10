@@ -12,4 +12,9 @@ export const SKIP_AD_LABELS = [
 export const DISPLAY_ITEM = 'ytd-rich-item-renderer:not(.hided)';
 export const DISPLAY_ITEM_AD = '.badge-style-type-ad';
 
+// Query selector for unskipable ads
+export const VIDEO_AD_OVERLAY = '.ytp-ad-player-overlay';
+
+export const MAIN_VIDEO = 'video.html5-main-video';
+
 export const INTERVAL_TIME = 400;
