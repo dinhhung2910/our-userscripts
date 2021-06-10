@@ -20,4 +20,4 @@
 // @grant       GM_log
 // ==/UserScript==
 
-(()=>{"use strict";const e=e=>{try{e.parentElement.removeChild(e)}catch(e){console.error(e)}},r=[".ytp-ad-image-overlay","ytd-player-legacy-desktop-watch-ads-renderer","#masthead-ad"],t=[".ytp-ad-skip-button"],a=()=>{t.forEach((e=>{document.querySelectorAll(e).forEach((e=>{e.click()}))}))};setInterval((()=>{r.forEach((r=>{document.querySelectorAll(r).forEach((r=>{e(r)}))})),document.querySelectorAll("ytd-rich-item-renderer").forEach((r=>{r.querySelector(".badge-style-type-ad")&&e(r)}))}),400),setInterval(a,400)})();
+(()=>{"use strict";const e=[".ytp-ad-image-overlay","ytd-player-legacy-desktop-watch-ads-renderer","#masthead-ad"],t=[".ytp-ad-skip-button"],r=()=>{t.forEach((e=>{document.querySelectorAll(e).forEach((e=>{e.click()}))}))};setInterval((()=>{e.forEach((e=>{document.querySelectorAll(e).forEach((e=>{(e=>{try{e.parentElement.removeChild(e)}catch(e){console.error(e)}})(e)}))})),document.querySelectorAll("ytd-rich-item-renderer:not(.hided)").forEach((e=>{e.querySelector(".badge-style-type-ad")&&(e.style.display="none",e.classList.add("hided"))}))}),400),setInterval(r,400)})();

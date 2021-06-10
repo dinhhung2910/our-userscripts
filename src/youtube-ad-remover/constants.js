@@ -8,7 +8,8 @@ export const SKIP_AD_LABELS = [
   '.ytp-ad-skip-button',
 ];
 
-export const DISPLAY_ITEM = 'ytd-rich-item-renderer';
+// This is the selector in dashboard page
+export const DISPLAY_ITEM = 'ytd-rich-item-renderer:not(.hided)';
 export const DISPLAY_ITEM_AD = '.badge-style-type-ad';
 
 export const INTERVAL_TIME = 400;

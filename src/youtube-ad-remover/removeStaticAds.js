@@ -8,9 +8,13 @@ export const removeStaticAds = () => {
     });
   });
 
+  // this is the advertisement in dashboard page
+  // if it is removed, it will be appended later
+  // so, hide it is the best choice
   document.querySelectorAll(DISPLAY_ITEM).forEach((elm) => {
     if (elm.querySelector(DISPLAY_ITEM_AD)) {
-      removeDOM(elm);
+      elm.style.display = 'none';
+      elm.classList.add('hided');
     }
   });
 };
