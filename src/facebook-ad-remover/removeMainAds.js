@@ -1,5 +1,5 @@
 import store from '../common/store';
-import {observeDOM, removeDOM} from '../common/util';
+import {hideDOM, observeDOM} from '../common/util';
 import {AD_LABELS, ARTICLES_SELECTOR, FEED_SELECTOR} from './constants';
 
 const config = {attributes: false, childList: true, subtree: false};
@@ -11,7 +11,7 @@ const callback = function(mutationsList, observer) {
       list.forEach((elm) => {
         if (isMainAds(elm)) {
           console.log('removed incoming ad');
-          removeDOM(elm);
+          hideDOM(elm);
         }
       });
     }
@@ -47,7 +47,7 @@ export const removeMainAds = (feed) => {
     articles.forEach((elm) => {
       if (isMainAds(elm)) {
         console.log('removed remain ad');
-        removeDOM(elm);
+        hideDOM(elm);
       }
     });
   }

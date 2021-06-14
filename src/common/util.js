@@ -101,3 +101,12 @@ export const removeDOM = (elm) => {
     console.error(e);
   }
 };
+
+export const hideDOM = (elm) => {
+  try {
+    elm.style.display = 'none';
+    elm.classList.add('hided');
+  } catch (e) {
+    console.error(e);
+  }
+};
