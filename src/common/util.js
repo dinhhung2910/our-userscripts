@@ -42,13 +42,24 @@ export const observeDOM = (targetNode,
  * @param {String} content Innertext of element to search
  */
 export const getSnapshotElmByContent = (content) => {
-  const adTexts = document.evaluate(
-    `//b[contains(., \'${content}\')]`,
-    document,
-    null,
-    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
-    null,
-  );
+  const availableTags = ['b', 'span'];
+
+  let adTexts = null;
+
+  for (let i = 0; i < availableTags.length; i++) {
+    const tag = availableTags[i];
+    if (adTexts && adTexts.snapshotLength) {
+      break;
+    }
+
+    adTexts = document.evaluate(
+      `//${tag}[contains(., \'${content}\')]`,
+      document,
+      null,
+      XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+      null,
+    );
+  }
 
   if (adTexts && adTexts.snapshotLength) {
     return adTexts.snapshotItem(0);

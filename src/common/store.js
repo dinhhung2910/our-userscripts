@@ -7,6 +7,24 @@ export const del = GM_deleteValue;
 // eslint-disable-next-line camelcase
 export const list = GM_listValues;
 
+/**
+ * Push elm to store key
+ * Check if store key is array type, then push value
+ * @param {*} key
+ * @param {*} value
+ */
+export const push = (key, value) => {
+  let currentVal = get(key);
+  if (!Array.isArray(currentVal)) {
+    currentVal = [];
+  }
+  if (!currentVal.includes(value)) {
+    currentVal.push(value);
+  }
+
+  set(key, currentVal);
+};
+
 export const onChange = (name, func) => {
   GM_addValueChangeListener(name, (_name, old, val, remote) =>
     func(val, remote, old),

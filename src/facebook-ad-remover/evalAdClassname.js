@@ -1,6 +1,6 @@
 import {getSnapshotElmByContent} from '../common/util';
 import {AD_LABELS, INTERVAL_TIME_RE_EVALUATE_ADS} from './constants';
-import {get, set} from '../common/store';
+import {get, push} from '../common/store';
 
 /**
  * evaluate ad classname and save to local database
@@ -11,7 +11,12 @@ export const evaluateAdClassname = () => {
     if (elm) {
       const adClassname = '.' + elm.className.split(' ').join('.');
 
-      set('adSelector', adClassname);
+      if (adClassname != '.') {
+        push('adSelector', adClassname);
+      }
+
+      console.log(get('adSelector'));
+
       console.info('Updated ad selector');
     }
   });

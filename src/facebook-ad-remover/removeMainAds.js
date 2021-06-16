@@ -21,18 +21,25 @@ const callback = function(mutationsList, observer) {
 export const isMainAds = (elm) => {
   let isAd = false;
 
-  const adSelector = store.get('adSelector');
+  const adSelectors = store.get('adSelector');
 
-  const adTexts = elm.querySelectorAll(adSelector);
-  adTexts.forEach((en) => {
-    if (typeof en.innerText == 'string') {
-      AD_LABELS.forEach((adAria) => {
-        if (en.innerText.includes(adAria)) {
-          isAd = true;
+  adSelectors.forEach((adSelector) => {
+    try {
+      const adTexts = elm.querySelectorAll(adSelector);
+      adTexts.forEach((en) => {
+        if (typeof en.innerText == 'string') {
+          AD_LABELS.forEach((adAria) => {
+            if (en.innerText.includes(adAria)) {
+              isAd = true;
+            }
+          });
         }
       });
+    } catch (e) {
+      console.warn(e, adSelector);
     }
   });
+
   return isAd;
 };
 
