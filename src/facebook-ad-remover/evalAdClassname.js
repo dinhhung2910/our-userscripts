@@ -9,7 +9,10 @@ export const evaluateAdClassname = () => {
   AD_LABELS.forEach((label) => {
     const elm = getSnapshotElmByContent(label);
     if (elm) {
-      const adClassname = '.' + elm.className.split(' ').join('.');
+      const adClassname = '.' + elm.className
+        .split(' ')
+        .filter((en) => en)
+        .join('.');
 
       if (adClassname != '.') {
         push('adSelector', adClassname);
