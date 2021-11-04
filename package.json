@@ -38,6 +38,6 @@
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "preact": "^10.5.15",
-    "style-loader": "^3.3.0"
+    "style-loader": "^3.3.1"
   }
 }
