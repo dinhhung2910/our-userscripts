@@ -19,8 +19,10 @@ export const muteAds = () => {
 
     adOverlay.innerHTML = '<div>Unskippable advertisement.</div>';
 
-    const video = document.querySelector(MAIN_VIDEO);
-    video.volume = 0;
+    MAIN_VIDEO.forEach((queryMainVideo) => {
+      const video = document.querySelector(queryMainVideo);
+      video.volume = 0;
+    });
   }
 };
 
