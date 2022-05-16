@@ -25,7 +25,7 @@ module.exports = {
     filename: `${outName}.user.js`,
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist'),
   },
   resolve: {
     alias: {
