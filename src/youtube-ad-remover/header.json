@@ -1,7 +1,7 @@
 {
   "name": "Youtube advertisements remover",
   "namespace": "Script",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "updateURL": "https://github.com/dinhhung2910/our-userscripts/raw/main/dist/youtube-ad-remover.user.js",
   "description": "Remove and auto skip advertisements on youtube web",
   "author": "Hung Dinh",

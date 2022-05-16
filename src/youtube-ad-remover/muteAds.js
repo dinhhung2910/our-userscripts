@@ -21,7 +21,9 @@ export const muteAds = () => {
 
     MAIN_VIDEO.forEach((queryMainVideo) => {
       const video = document.querySelector(queryMainVideo);
-      video.volume = 0;
+      if (video) {
+        video.volume = 0;
+      }
     });
   }
 };
