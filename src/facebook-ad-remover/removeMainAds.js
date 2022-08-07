@@ -1,6 +1,25 @@
-import store from '../common/store';
 import {hideDOM, observeDOM} from '../common/util';
-import {AD_LABELS, ARTICLES_SELECTOR, FEED_SELECTOR} from './constants';
+import {
+  ARTICLES_SELECTOR,
+  FEED_SELECTOR,
+  INGORED_ARTICLE_CATEGORIES,
+} from './constants';
+
+const getDataFromDOM = (elm) => {
+  const propsKey = Object.keys(elm).find((en) => en.includes('reactProp'));
+  if (!propsKey) {
+    return null;
+  }
+
+  let result = null;
+  try {
+    result = elm[propsKey].children.props.children.props;
+  } catch (e) {
+    // ignore e
+  }
+
+  return result;
+};
 
 const config = {attributes: false, childList: true, subtree: false};
 const callback = function(mutationsList, observer) {
@@ -19,26 +38,20 @@ const callback = function(mutationsList, observer) {
 };
 
 export const isMainAds = (elm) => {
+  if (!elm) return false;
+
   let isAd = false;
 
-  const adSelectors = store.get('adSelector');
+  const elmProps = getDataFromDOM(elm);
+  if (!elmProps) return false;
 
-  adSelectors.forEach((adSelector) => {
-    try {
-      const adTexts = elm.querySelectorAll(adSelector);
-      adTexts.forEach((en) => {
-        if (typeof en.innerText == 'string') {
-          AD_LABELS.forEach((adAria) => {
-            if (en.innerText.includes(adAria)) {
-              isAd = true;
-            }
-          });
-        }
-      });
-    } catch (e) {
-      console.warn(e, adSelector);
-    }
-  });
+  elm.classList.add('checked');
+
+  try {
+    isAd = INGORED_ARTICLE_CATEGORIES.includes(elmProps.feedEdge.category);
+  } catch (e) {
+    console.warn(e);
+  }
 
   return isAd;
 };

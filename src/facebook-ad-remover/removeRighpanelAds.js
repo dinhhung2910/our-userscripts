@@ -32,7 +32,8 @@ const removeRightpanelAds = () => {
   if (rightRale) {
     setTimeout(() => {
       const childList = (rightRale.firstElementChild &&
-       rightRale.firstElementChild.children) || [];
+       rightRale.firstElementChild.firstElementChild &&
+       rightRale.firstElementChild.firstElementChild.children) || [];
 
       for (let i = 0; i < childList.length; i++) {
         let adSection = null;
