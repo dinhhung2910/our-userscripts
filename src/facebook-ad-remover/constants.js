@@ -19,8 +19,9 @@ export const RIGHT_PANEL_ADS_ARIA = [
 export const FEED_SELECTOR = '[role="feed"]';
 export const ARTICLES_SELECTOR = `${FEED_SELECTOR}>div:not(.checked)`;
 export const INGORED_ARTICLE_CATEGORIES = [
-  'SPONSORED',
-  'ENGAGEMENT',
+  'SPONSORED', // advertisement
+  'ENGAGEMENT', // suggested articles
+  'SHOWCASE', // reels
 ];
 
 export const INTERVAL_TIME_RE_EVALUATE_ADS = 30000;
