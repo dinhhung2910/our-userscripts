@@ -22,6 +22,7 @@ export const INGORED_ARTICLE_CATEGORIES = [
   'SPONSORED', // advertisement
   'ENGAGEMENT', // suggested articles
   'SHOWCASE', // reels
+  'FB_SHORTS', // short videos
 ];
 
 export const INTERVAL_TIME_RE_EVALUATE_ADS = 30000;
