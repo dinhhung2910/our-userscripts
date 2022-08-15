@@ -18,7 +18,7 @@ export const VIDEO_AD_OVERLAY = '.ytp-ad-player-overlay';
 
 export const MAIN_VIDEO = [
   'video.html5-main-video',
-  'video.video-stream html5-main-video',
+  'video.video-stream.html5-main-video',
 ];
 
 export const INTERVAL_TIME = 400;
