@@ -1,7 +1,7 @@
 {
   "name": "Facebook advertisements remover",
   "namespace": "Script",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "updateURL": "https://github.com/dinhhung2910/our-userscripts/raw/main/dist/facebook-ad-remover.user.js",
   "description": "Remove advertisements on facebook web",
   "author": "Hung Dinh",

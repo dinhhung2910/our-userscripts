@@ -16,7 +16,7 @@ export const RIGHT_PANEL_ADS_ARIA = [
   '[aria-label="Nhà quảng cáo"]',
 ];
 
-export const FEED_SELECTOR = '[role="feed"]';
+export const FEED_SELECTOR = '#ssrb_feed_start+div>div';
 export const ARTICLES_SELECTOR = `${FEED_SELECTOR}>div:not(.checked)`;
 export const INGORED_ARTICLE_CATEGORIES = [
   'SPONSORED', // advertisement
