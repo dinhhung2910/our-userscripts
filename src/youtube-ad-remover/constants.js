@@ -7,6 +7,7 @@ export const AD_LABELS = [
 
 export const SKIP_AD_LABELS = [
   '.ytp-ad-skip-button',
+  '.ytp-ad-skip-button-modern'
 ];
 
 // This is the selector in dashboard page

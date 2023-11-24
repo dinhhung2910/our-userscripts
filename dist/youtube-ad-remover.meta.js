@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Youtube advertisements remover
-// @version     1.2.5
+// @version     1.2.6
 // @author      Hung Dinh
 // @description Remove and auto skip advertisements on youtube web
 // @homepage    https://github.com/dinhhung2910/our-userscripts#readme
