@@ -25,7 +25,7 @@ module.exports = {
     filename: `${outName}.user.js`,
   },
   devServer: {
-    static: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist')
   },
   resolve: {
     alias: {
@@ -36,6 +36,7 @@ module.exports = {
       'react-dom': 'preact/compat',
     },
   },
+  devtool: 'inline-nosources-cheap-module-source-map',
   module: {
     rules: [
       {
