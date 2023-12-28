@@ -1,7 +1,8 @@
 import {hideDOM, observeDOM} from '../common/util';
 import {
   ARTICLES_SELECTOR,
-  FEED_SELECTOR,
+  FEED_HEADING_SELECTOR,
+  FEED_HEADING_CONTENT,
   INGORED_ARTICLE_CATEGORIES,
 } from './constants';
 
@@ -13,7 +14,7 @@ const getDataFromDOM = (elm) => {
 
   let result = null;
   try {
-    result = elm[propsKey].children.props.children.props;
+    result = elm[propsKey].children.props.children.props.children.props.children.props;
   } catch (e) {
     // ignore e
   }
@@ -59,7 +60,14 @@ export const isMainAds = (elm) => {
 export const removeMainAds = (feed) => {
   if (!feed) {
     setTimeout(() => {
-      const newFeed = document.querySelector(FEED_SELECTOR);
+      const listHeadings = document.querySelectorAll(FEED_HEADING_SELECTOR);
+      let newFeed = null;
+      for (let heading of listHeadings) {
+        if (heading.innerText == FEED_HEADING_CONTENT) {
+          newFeed = heading.nextElementSibling;
+        }
+      }
+
       removeMainAds(newFeed);
     });
   } else {
@@ -76,9 +84,16 @@ export const removeMainAds = (feed) => {
 export const observeFeed = (feed) => {
   if (!feed) {
     setTimeout(() => {
-      const newFeed = document.querySelector(FEED_SELECTOR);
+      const listHeadings = document.querySelectorAll(FEED_HEADING_SELECTOR);
+      let newFeed = null;
+      for (let heading of listHeadings) {
+        if (heading.innerText == FEED_HEADING_CONTENT) {
+          newFeed = heading.nextElementSibling;
+        }
+      }
+
       observeFeed(newFeed);
-    });
+    }, 500);
   } else {
     observeDOM(feed, config, callback);
   }

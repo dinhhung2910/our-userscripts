@@ -11,13 +11,13 @@ export const AD_SELECTORS = [
   '[href^="/reel/"]',
 ];
 
-export const RIGHT_PANEL_SELECTOR = '#ssrb_rhc_start+div';
-export const RIGHT_PANEL_ADS_ARIA = [
-  '[aria-label="Nhà quảng cáo"]',
-];
+export const RIGHT_PANEL_SELECTOR = 'div[role=complementary]';
+export const RIGHT_PANEL_ADS_HEADING_CONTENT = 'Được tài trợ';
 
-export const FEED_SELECTOR = '#ssrb_feed_start+div>div';
-export const ARTICLES_SELECTOR = `${FEED_SELECTOR}>div:not(.checked)`;
+export const FEED_HEADING_SELECTOR = 'h3';
+export const FEED_HEADING_CONTENT = 'Bài viết trên Bảng tin';
+
+export const ARTICLES_SELECTOR = `:scope>div:not(.checked)`;
 export const INGORED_ARTICLE_CATEGORIES = [
   'SPONSORED', // advertisement
   'ENGAGEMENT', // suggested articles

@@ -42,7 +42,6 @@ export const evaluateAdClassname = () => {
     });
   });
 
-  console.log(get('adSelector'));
   console.info('Updated ad selector');
 };
 

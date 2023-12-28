@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Facebook advertisements remover
-// @version     1.5.4
+// @version     1.5.5
 // @author      Hung Dinh
 // @description Remove advertisements on facebook web
 // @homepage    https://github.com/dinhhung2910/our-userscripts#readme
