@@ -28,7 +28,7 @@
     "webpack-userscript": "^3.2.2"
   },
   "dependencies": {
-    "@babel/core": "^7.23.9",
+    "@babel/core": "^7.27.1",
     "@babel/preset-env": "^7.23.9",
     "@babel/preset-react": "^7.24.7",
     "babel": "^6.23.0",
