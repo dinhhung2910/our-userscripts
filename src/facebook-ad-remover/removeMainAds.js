@@ -48,7 +48,8 @@ export const isMainAds = (elm) => {
   elm.classList.add('checked');
 
   try {
-    // isAd = !elmProps.feedEdge.labl_for_coniten_of_brs;
+    const label = elmProps.feedEdge.brs_content_label || elmProps.feedEdge.labl_for_coniten_of_brs;
+    isAd = !label;
   } catch (e) {
     console.log(elmProps);
     console.warn(e);

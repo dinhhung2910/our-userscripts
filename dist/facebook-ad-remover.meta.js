@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name Facebook advertisements remover
 // @description Remove advertisements on facebook web
-// @version 1.5.5
+// @version 1.5.6
 // @author Hung Dinh
 // @supportURL https://github.com/dinhhung2910/our-userscripts/pulls
 // @match https://www.facebook.com/**
