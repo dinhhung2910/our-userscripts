@@ -7,6 +7,7 @@ export const AD_LABELS = [
 
 export const SKIP_AD_LABELS = [
   '.ytp-ad-skip-button',
+  '.ytp-skip-ad-button',
   '.ytp-ad-skip-button-modern'
 ];
 
@@ -15,7 +16,7 @@ export const DISPLAY_ITEM = 'ytd-rich-item-renderer:not(.hided)';
 export const DISPLAY_ITEM_AD = '.badge-style-type-ad';
 
 // Query selector for unskipable ads
-export const VIDEO_AD_OVERLAY = '.ytp-ad-player-overlay';
+export const VIDEO_AD_OVERLAY = '#container div.ad-interrupting video';
 
 export const MAIN_VIDEO = [
   'video.html5-main-video',

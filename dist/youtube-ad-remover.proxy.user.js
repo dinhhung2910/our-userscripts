@@ -15,6 +15,6 @@
 // @grant GM_removeValueChangeListener
 // @grant GM_log
 // @namespace Script
+// @require http://localhost:8080/youtube-ad-remover.user.js
 // @source https://github.com/dinhhung2910/our-userscripts/blob/main/dist/youtube-ad-remover.user.js
-// @updateURL https://github.com/dinhhung2910/our-userscripts/raw/main/dist/youtube-ad-remover.user.js
 // ==/UserScript==
