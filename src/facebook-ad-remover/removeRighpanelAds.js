@@ -19,7 +19,7 @@ const removeRightpanelAds = () => {
     let adComponent = adHeading;
     if (adHeading) {
       while (adComponent) {
-        if (adComponent.tagName == 'SPAN') {
+        if (adComponent.parentElement && adComponent.parentElement.querySelectorAll('h3').length > 1) {
           break;
         }
 

@@ -3,7 +3,7 @@ import {
   ARTICLES_SELECTOR,
   FEED_HEADING_SELECTOR,
   FEED_HEADING_CONTENT,
-  INGORED_ARTICLE_CATEGORIES,
+  IGNORED_ARTICLE_LABELS,
 } from './constants';
 
 const getDataFromDOM = (elm) => {
@@ -14,7 +14,7 @@ const getDataFromDOM = (elm) => {
 
   let result = null;
   try {
-    result = elm[propsKey].children.props.children.props.children.props.children.props;
+    result = elm[propsKey].children.props.children.props.children.props.children.props.children.props;
   } catch (e) {
     // ignore e
   }
@@ -40,7 +40,6 @@ const callback = function(mutationsList, observer) {
 
 export const isMainAds = (elm) => {
   if (!elm) return false;
-
   let isAd = false;
 
   const elmProps = getDataFromDOM(elm);
@@ -49,9 +48,17 @@ export const isMainAds = (elm) => {
   elm.classList.add('checked');
 
   try {
-    isAd = INGORED_ARTICLE_CATEGORIES.includes(elmProps.feedEdge.category);
+    isAd = !elmProps.feedEdge.labl_for_coniten_of_brs;
   } catch (e) {
+    console.log(elmProps);
     console.warn(e);
+  }
+
+  if (!isAd) {
+    const title = elm.querySelector('h4');
+    if (title && title.innerText.includes('Theo dõi')) {
+      isAd = true;
+    }
   }
 
   return isAd;
@@ -64,7 +71,7 @@ export const removeMainAds = (feed) => {
       let newFeed = null;
       for (let heading of listHeadings) {
         if (heading.innerText == FEED_HEADING_CONTENT) {
-          newFeed = heading.nextElementSibling;
+          newFeed = newFeed = heading.parentElement.lastElementChild;
         }
       }
 
@@ -88,7 +95,7 @@ export const observeFeed = (feed) => {
       let newFeed = null;
       for (let heading of listHeadings) {
         if (heading.innerText == FEED_HEADING_CONTENT) {
-          newFeed = heading.nextElementSibling;
+          newFeed = heading.parentElement.lastElementChild;
         }
       }
 
