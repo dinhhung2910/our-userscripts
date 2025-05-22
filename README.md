@@ -14,6 +14,11 @@ Reusable utilities will be placed under `./src/common` and can be imported as `i
 
 Run `SCRIPT=./src/your/script/index.js yarn start` to start a watch and development server, then go to `http://localhost:8080/your-script.proxy.user.js` to add to tampermoneky, the script will be auto updated after each save (still need to check for update on tampermoneky though).
 
+```bash
+# Init eslint
+npx eslint --init
+```
+
 # Build`
 
 Run `SCRIPT=./src/your/script/index.js yarn build` to compile script into `./dist/`

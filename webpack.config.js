@@ -1,7 +1,9 @@
+/* eslint-disable no-undef */
 /* eslint-env node */
+
 const path = require('path');
 const webpack = require('webpack');
-const fs = require('fs');
+const fs = require('fs');   
 const WebpackUserscript = require('webpack-userscript');
 const dev = process.env.NODE_ENV === 'development';
 
@@ -20,7 +22,7 @@ const outName = path.relative('./src', dirname).replace(/\//g, '-');
 module.exports = {
   mode: dev ? 'development' : 'production',
   entry: script,
-  output: {
+  output: { 
     path: path.resolve(__dirname, 'dist'),
     filename: `${outName}.user.js`,
   },
@@ -78,7 +80,7 @@ module.exports = {
       'process.env.CANDY': process.env.CANDY ?
         JSON.stringify(Buffer.from(process.env.CANDY).toString('base64')) : '',
     }),
-    new WebpackUserscript({
+    new WebpackUserscript.default({
       headers,
       proxyScript: {
         baseUrl: 'http://127.0.0.1:8080',
