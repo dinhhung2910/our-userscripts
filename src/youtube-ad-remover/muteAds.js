@@ -23,6 +23,7 @@ export const muteAds = () => {
       const video = document.querySelector(queryMainVideo);
       if (video) {
         video.volume = 0;
+        video.currentTime = video.currentTime + 1000;
       }
     });
   }
