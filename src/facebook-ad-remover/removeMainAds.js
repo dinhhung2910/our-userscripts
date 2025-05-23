@@ -75,7 +75,7 @@ const callback = function(mutationsList, observer) {
   }
 };
 
-export const isMainAds = (elm) => {
+export const isMainAds = (elm, isFinal = false) => {
   if (!elm) return false;
   let isAd = false;
 
@@ -104,7 +104,10 @@ export const isMainAds = (elm) => {
     }
   }
 
-  elm.classList.add('checked');
+  if (isFinal) {
+    // Ignore checking this elm in next times.ß
+    elm.classList.add('checked');
+  }
 
   return isAd;
 };
@@ -125,7 +128,7 @@ export const removeMainAds = (feed) => {
   } else {
     const articles = feed.querySelectorAll(ARTICLES_SELECTOR);
     articles.forEach((elm) => {
-      if (isMainAds(elm)) {
+      if (isMainAds(elm, true)) {
         console.log('removed remain ad');
         hideDOM(elm);
       }
